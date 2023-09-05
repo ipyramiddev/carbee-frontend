@@ -4,11 +4,9 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Edge, AppointmentDto, PageInfo } from '@/utils/types';
 import { getAppointmentsBefore, getAppointmentsAfter, getAvailability } from '../api/appointments'
-import App from 'next/app';
 import moment from 'moment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import { faCalendar } from '@fortawesome/free-regular-svg-icons';
 import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons';
 
 // Add your import statements for availability and appointment data fetching
@@ -91,7 +89,9 @@ const Dashboard: React.FC = () => {
   return (
     <div className="dashboard-container">
       <h1>Dashboard</h1>
-      <div className="grid grid-cols-2 gap-x-[40px]">
+
+      <h2>Your Availabilities</h2>
+      <div className="flex">
         <div>
           <label htmlFor="dateSelect">Select Date:</label>
           <DatePicker 
@@ -100,8 +100,8 @@ const Dashboard: React.FC = () => {
             minDate={moment(new Date()).add(1, 'days').toDate()}
             onChange={(date) => setSelectedDate(date)} />
         </div>
-        <div>
-        <label htmlFor="timeSelect">Select Time:</label>
+        <div className="ml-5">
+          <label htmlFor="timeSelect">Select Time:</label>
           <select id="timeSelect" onChange={handleTimeChange}>
               {availableTimes.map((time, idx) => (
                 <option key={idx} value={time}>
@@ -112,9 +112,7 @@ const Dashboard: React.FC = () => {
         </div>
       </div>
       
-      
-
-      <h2>Your Appointments</h2>
+      <h2 className='mt-5'>Your Appointments</h2>
       <ul className="appointments-list">
       {appointments.map((appointment) => (
         <li className="border-[1px] border-stone-400 pb-4" key={appointment.node.scheduledTime}>
