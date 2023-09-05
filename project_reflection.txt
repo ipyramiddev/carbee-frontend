@@ -1,0 +1,23 @@
+Q: Did you run into any "gotchas" along the way? If so, what were they and how did you address them?
+
+A: I didn't encounter any significant gotchas or blockers during this project. 
+
+Q: How did you handle forms? In a largely form-driven project, would you do anything differently? If so, what?
+
+A: For handling forms in this project, I utilized simple form element. This included using form components to capture user input and submitting the form data to the appropriate API endpoints. In a larger form-driven project, I would ensure proper form validation on the client-side using a validation library like Yup or Formik. Additionally, I would implement server-side validation to ensure data integrity and security.
+
+Q: How did you handle authorization? In your ideal FE/BE scenario, what auth strategy would you use?
+
+A: In this project, I handled authorization by utilizing JSON Web Tokens (JWTs). I persisted the token within the client-side application and attached it to each authorized request. My ideal authentication strategy would involve a combination of JWTs and OAuth 2.0. I would implement role-based access control (RBAC) to provide granular permissions and authorization based on user roles and scopes. Additionally, I would employ measures like token expiration and refresh tokens for enhanced security.
+
+Q: Is there anything you'd like to share about your project prior to my evaluating it?
+
+A: In this project, I focused on adhering to best practices and ensuring code readability and maintainability. I followed Next.js conventions, utilized TypeScript for type safety, and organized code into reusable components. I paid attention to error handling and implemented appropriate error boundaries to provide a better user experience.
+
+Q: How long did you spend on this exercise? If you had unlimited more time to spend on this, how would you spend it and how would you prioritize each item?
+
+A: I spent approximately two hours completing this exercise. If I had unlimited time, here's how I would prioritize additional improvements:
+First, I would focus on enhancing the user interface to improve visual appeal and user experience.
+Next, I would invest time into writing comprehensive tests, including unit tests, integration tests, and end-to-end tests.
+Additionally, I would extend the functionality by implementing additional features, such as the ability to create new appointments, edit existing appointments, and manage user settings.
+Lastly, I would review the codebase for any potential performance optimizations, refactoring opportunities, and security enhancements.
